@@ -1,7 +1,15 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-   <h1>siema</h1>
+    <h1>Zaproponuj przystanek</h1>
+    <form>
+        <p>Podaj adres przystanku: </p>
+        <input type="text" id="adres" name="adres"> </input><br>
+        
+        <p>Podaj opis przystanku: </p>
+        <input type="textarea" id="opis" name="opis"> </input><br>
+        <input type="Submit" value="Wyślij"></input>
+    </form>
 {% endblock %}
 
 {% block stylesheets %}
