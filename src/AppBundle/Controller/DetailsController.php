@@ -20,7 +20,7 @@ class DetailsController extends Controller
            // zmiana flagi przy adresie przystanku
            $entityManager= $this ->getDoctrine() ->getManager();
            $data= $this -> getDoctrine()->getRepository('AppBundle:Przystanki')->find($_POST['id']);
-           var_dump($_POST['id']);
+           
            $data -> setOdczytano('1');
            $entityManager->persist($data);
            $entityManager->flush();

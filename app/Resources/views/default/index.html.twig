@@ -9,7 +9,10 @@
         <input type="hidden" name="identyfikator" id="identyfikator" value="1"></input>
         <input type="hidden" name="odczytano" id="odczytano" value="0"></input>
         <input type="textarea" id="opis" name="opis"> </input><br>
-        <input type="file" id="zal1" multiple name="zal1[]" max="3"  class="zal"></input><br>
+        <div>
+            <div id="siema"><p id="paragrafik">Akceptowalne formaty plików: jpg,png,gif</p></div>
+            <input type="file" id="zal1" multiple name="zal1[]"   class="zal"></input><br>
+        </div>
         <input type="Submit" value="Wyślij" id="submit" class="zal"></input>
     </form>
 {% endblock %}

@@ -65,7 +65,7 @@ class DefaultController extends Controller
                     {
                         foreach ($filesArr['name'] as $index=>$zal1)
                         {
-                            var_dump('siema');
+                            
                             $variable=$index+1;
 
                             $destination = $this ->getParameter('kernel.project_dir').'/uploads/';
