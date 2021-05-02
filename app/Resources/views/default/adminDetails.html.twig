@@ -1,7 +1,30 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-   <h1>Pomyślnie zmieniono zmienną odczytano!</h1>
+   <table>
+       <tr>
+           <th>ID</th>
+           <th>Adres Przystanku</th>
+           <th>Opis</th>
+           <th>Identyfikator Użytkownika</th>
+           <th>Załącznik 1</th>
+           <th>Załącznik 2</th>
+           <th>Załącznik 3</th>
+           <th>Odczytano</th>
+       </tr>
+       <tr>
+          
+           <td>{{ data.id }}</td>
+           <td>{{ data.adresPrzystanku }}</td>
+           <td>{{ data.opis}}</td>
+           <td>{{ data.identyfikator }}</td>
+           <td>{{ data.zal1 }}</td>
+           <td>{{ data.zal2 }}</td>
+           <td>{{ data.zal3 }}</td>
+           <td>{{ data.odczytano}}</td>
+       </tr>
+   </table>
+       <a href="/admin">Powrót</a>
 {% endblock %}
 
 {% block stylesheets %}

@@ -15,11 +15,20 @@ class DetailsController extends Controller
     
     public function indexAction()
     {
-       
-        return $this->render('default/adminDetails.html.twig', [ 
-           
-        ]);
-    }
+       if(isset($_POST['id']))
+       {
+           // zmiana flagi przy adresie przystanku
+           $entityManager= $this ->getDoctrine() ->getManager();
+           $data= $this -> getDoctrine()->getRepository('AppBundle:Przystanki')->find($_POST['id']);
+           $data -> setOdczytano('1');
+           $entityManager->persist($data);
 
-    
+           return $this->render('default/adminDetails.html.twig', [ 'data'=>$data
+        ]);
+         $entityManager->flush();
+       }else
+       {
+           return new Response('Najpierw wejdź na /admin');
+       }
+    } 
 }
