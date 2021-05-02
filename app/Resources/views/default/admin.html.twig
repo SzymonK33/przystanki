@@ -2,6 +2,31 @@
 
 {% block body %}
    <h1>Panel administratora</h1>
+   <table>
+       <tr>
+           <th>ID</th>
+           <th>Nazwa</th>
+           <th>Czy odczytano</th>
+           <th>rozwiń</th>
+       </tr>
+       <tr>
+           {% for uni in data %}
+           <td>{{ uni.id }}</td>
+           <td>{{ uni.adresPrzystanku }}</td>
+           <td>{{ uni.odczytano }}</td>
+           <td>
+               <form action="/admin/details" method="post">
+                   <input type="hidden" name="id" id="id" value="{{ uni.id }}">
+                   <input type="submit" value="Pokaż szczegóły">
+               </form>
+           </td>
+       </tr>
+       {% else %}
+       <tr>
+           <td>No data</td>
+       </tr>
+       {% endfor %}
+   </table>
 {% endblock %}
 
 {% block stylesheets %}

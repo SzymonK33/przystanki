@@ -7,17 +7,17 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class AdminController extends Controller
+class DetailsController extends Controller
 {
     /**
-     * @Route("/admin", name="admin")
+     * @Route("/admin/details", name="details")
      */
     
     public function indexAction()
     {
-       $data= $this -> getDoctrine()->getRepository('AppBundle:Przystanki')->findAll();
-        return $this->render('default/admin.html.twig', [ 
-            'data'=>$data
+       
+        return $this->render('default/adminDetails.html.twig', [ 
+           
         ]);
     }
 
